@@ -18,12 +18,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    'react-hooks',
-    '@typescript-eslint',
-    'prettier',
-  ],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
   },

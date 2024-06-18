@@ -1,10 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
+import './index.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const T_5_MINUTES = 1000 * 60 * 5;
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 3,
+      gcTime: T_5_MINUTES,
+      staleTime: T_5_MINUTES,
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>,
-)
+);
