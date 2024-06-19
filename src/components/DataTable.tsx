@@ -56,7 +56,7 @@ const DataTable = <TData,>({ data, columns }: DataTableProps<TData>) => {
             {table.getRowModel().rows.map((row) => (
               <MantineTable.Tr key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <MantineTable.Td key={cell.id}>
+                  <MantineTable.Td key={cell.id} className="font-medium">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </MantineTable.Td>
                 ))}
