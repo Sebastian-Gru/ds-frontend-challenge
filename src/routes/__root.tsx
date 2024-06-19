@@ -1,4 +1,3 @@
-import React from 'react';
 import { Outlet, createRootRoute } from '@tanstack/react-router';
 import { AppShell, Text } from '@mantine/core';
 import Logo from '../assets/logo.png';

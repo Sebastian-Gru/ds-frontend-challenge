@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MantineProvider } from '@mantine/core';
 import DataTable from '../components/DataTable';
