@@ -16,7 +16,7 @@ const RootComponent = () => {
       <AppShell.Header>
         <div className="flex items-center">
           <img src={Logo} className="h-14 px-4" alt="Website Logo" />
-          <Text size="xl">GovDATA</Text>
+          <Text size="xl">GovDATA Watch</Text>
         </div>
       </AppShell.Header>
 
