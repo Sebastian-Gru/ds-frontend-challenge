@@ -13,6 +13,7 @@ Keep in mind that the project is not fully implemented. This is an incomplete li
 - **Error Handling**: Error handling is not implemented.
 - **Logging**: Loading states are not implemented.
 - **Accessibility**: Accessibility is tested with Chrome Lighthouse but could be also further analyzed and improved.
+  **Active Link Styling**: Active link in navbar only works locally.
 - **And More**: Many other features are missing or incomplete.
 
 ## Tech Stack
