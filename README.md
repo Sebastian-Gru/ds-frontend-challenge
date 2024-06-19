@@ -2,15 +2,17 @@
 
 This project is a frontend dashboard for GovData, the data portal for Germany. The dashboard displays the number of data sets each federal ministry has made available on GovData and allows filtering and sorting of the data.
 
-The application is at https://sebastian-gru.github.io/ds-frontend-challenge.
+The application is deployed to Github Pages here: https://sebastian-gru.github.io/ds-frontend-challenge
 
-### Not Implemented
+## Not Implemented
 
-Keep in mind that the project is not fully implemented. The following features are missing:
+Keep in mind that the project is not fully implemented. This is an incomplete list of missing features and improvements:
 
-- **Responsive Design**: The dashboard is not optimized for mobile devices.
-- **Full Test Coverage**: The tests are not comprehensive.
+- **Responsive Design**: The dashboard is not optimized for mobile devices and design could be improved.
+- **Full Test Coverage**: The tests are not comprehensive due to time limitations.
 - **Error Handling**: Error handling is not implemented.
+- **Logging**: Loading states are not implemented.
+- **Accessibility**: Accessibility is tested with Chrome Lighthouse but could be also further analyzed and improved.
 - **And More**: Many other features are missing or incomplete.
 
 ## Tech Stack
@@ -27,6 +29,8 @@ Keep in mind that the project is not fully implemented. The following features a
 - **Vitest**: A blazing-fast unit test framework powered by Vite.
 - **ESLint**: A pluggable linting utility for JavaScript and TypeScript.
 - **Prettier**: An opinionated code formatter.
+
+This might be a little overkill in terms of technology stack for this project. I wanted to try out some new libraries and tools.
 
 ## Getting Started
 
@@ -70,6 +74,16 @@ To run the tests, run:
 
 ```sh
 npm run test
+```
+
+### Deployment to Github Pages
+
+To deploy the application to Github Pages, run:
+
+```sh
+npm run build
+
+npm run deploy
 ```
 
 ### Project Structure
