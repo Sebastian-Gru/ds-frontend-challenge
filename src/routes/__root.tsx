@@ -1,16 +1,34 @@
 import React from 'react';
 import { Outlet, createRootRoute } from '@tanstack/react-router';
+import { AppShell, Text } from '@mantine/core';
+import Logo from '../assets/logo.png';
+import Navbar from '../components/Navbar';
 
 const RootComponent = () => {
   return (
-    <div className="max-h-screen w-full flex flex-col min-h-screen">
-      <h1>Dashboard</h1>
-      <div className="flex flex-1 overflow-hidden">
-        <div className="flex-1 w-full overflow-auto">
-          <Outlet />
+    <AppShell
+      header={{ height: 60 }}
+      navbar={{
+        width: 300,
+        breakpoint: 'sm',
+      }}
+      padding="md"
+    >
+      <AppShell.Header>
+        <div className="flex items-center">
+          <img src={Logo} className="h-14 px-4" alt="Website Logo" />
+          <Text size="xl">GovDATA</Text>
         </div>
-      </div>
-    </div>
+      </AppShell.Header>
+
+      <AppShell.Navbar p="md" className="bg-gray-200">
+        <Navbar />
+      </AppShell.Navbar>
+
+      <AppShell.Main>
+        <Outlet />
+      </AppShell.Main>
+    </AppShell>
   );
 };
 

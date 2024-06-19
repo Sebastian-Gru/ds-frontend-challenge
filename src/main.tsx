@@ -22,7 +22,7 @@ export const queryClient = new QueryClient({
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <MantineProvider withGlobalStyles withNormalizeCSS>
+      <MantineProvider>
         <App />
       </MantineProvider>
     </QueryClientProvider>
