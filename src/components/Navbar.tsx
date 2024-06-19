@@ -31,8 +31,14 @@ const Navbar = () => {
             key={name}
             to={path}
             className={`mb-4 mt-3 p-2 text-gray-800 ${isActive && 'bg-slate-100 rounded-lg'}`}
+            aria-current={isActive ? 'page' : undefined}
+            aria-label={`${name} page`}
+            tabIndex={0}
           >
-            {name} {icon}
+            <span role="img" aria-hidden="true">
+              {icon}
+            </span>{' '}
+            {name}
           </Link>
         );
       })}

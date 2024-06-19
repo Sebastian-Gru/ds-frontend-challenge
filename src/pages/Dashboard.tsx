@@ -35,15 +35,18 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-center gap-4 items-left w-full h-full">
-      <Text size="xl">Federal Ministry Datasets on GovData:</Text>
+      <Text size="xl" component="h1">
+        Federal Ministry Datasets on GovData:
+      </Text>
       <div className="px-4">
-        <Text size="md" className="py-4">
+        <Text size="md" className="py-4" component="h2">
           Filter:
         </Text>
         <Checkbox
           checked={checked}
           onChange={(event) => setChecked(event.currentTarget.checked)}
           label="Only departments with descriptions"
+          aria-checked={checked}
         />
       </div>
       <DataTable data={filteredData || []} columns={columns} />

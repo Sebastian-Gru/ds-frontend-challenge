@@ -14,10 +14,12 @@ const RootComponent = () => {
       padding="md"
     >
       <AppShell.Header>
-        <div className="flex items-center">
-          <img src={Logo} className="h-14 px-4" alt="Website Logo" />
-          <Text size="xl">GovDATA Watch</Text>
-        </div>
+        <header className="flex items-center" role="banner">
+          <img src={Logo} className="h-14 px-4" alt="GovDATA Watch Logo" />
+          <Text size="xl" component="h1">
+            GovDATA Watch
+          </Text>
+        </header>
       </AppShell.Header>
 
       <AppShell.Navbar p="md" className="bg-gray-200">
@@ -25,7 +27,9 @@ const RootComponent = () => {
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Outlet />
+        <main role="main">
+          <Outlet />
+        </main>
       </AppShell.Main>
     </AppShell>
   );

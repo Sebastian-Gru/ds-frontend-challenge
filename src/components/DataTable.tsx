@@ -26,6 +26,19 @@ const DataTable = <TData,>({ data, columns }: DataTableProps<TData>) => {
     getSortedRowModel: getSortedRowModel(),
   });
 
+  const getAriaSortValue = (
+    sortState: string | false | undefined,
+  ): 'none' | 'ascending' | 'descending' | 'other' => {
+    switch (sortState) {
+      case 'asc':
+        return 'ascending';
+      case 'desc':
+        return 'descending';
+      default:
+        return 'none';
+    }
+  };
+
   return (
     <Container>
       <ScrollArea>
@@ -37,16 +50,30 @@ const DataTable = <TData,>({ data, columns }: DataTableProps<TData>) => {
                   <MantineTable.Th
                     key={header.id}
                     onClick={header.column.getToggleSortingHandler()}
+                    role="button"
+                    tabIndex={0}
+                    aria-sort={getAriaSortValue(
+                      header.column.getIsSorted() as string,
+                    )}
+                    aria-label={`Sort by ${header.column.id}`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        header.column.getToggleSortingHandler()?.(e);
+                      }
+                    }}
                     className="text-left cursor-pointer text-xl whitespace-nowrap bg-cyan-600 border border-cyan-700 text-white px-4 py-2"
                   >
-                    {flexRender(
-                      header.column.columnDef.header,
-                      header.getContext(),
-                    )}
-                    {{
-                      asc: ' 🔼',
-                      desc: ' 🔽',
-                    }[header.column.getIsSorted() as string] ?? ' 🖱️'}
+                    <span>
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                      {{
+                        asc: ' 🔼',
+                        desc: ' 🔽',
+                      }[header.column.getIsSorted() as string] ?? ' 🖱️'}
+                    </span>
                   </MantineTable.Th>
                 ))}
               </MantineTable.Tr>
