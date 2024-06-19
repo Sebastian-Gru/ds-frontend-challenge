@@ -1,7 +1,7 @@
 {
   "name": "ds-frontend-challenge",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "homepage": "https://sebastian-gru.github.io/ds-frontend-challenge",
   "scripts": {
