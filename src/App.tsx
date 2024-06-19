@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { mockInit } from './services/apiMock';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
-import { routeTree } from './routeTree';
+import { routeTree } from './routeTree.gen';
 
 const router = createRouter({ routeTree });
 
