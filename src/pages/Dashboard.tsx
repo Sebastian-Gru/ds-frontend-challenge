@@ -1,17 +1,34 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import React from 'react';
 import { federalMinistryDataInformationQueryOptions } from '../routes';
+import DataTable from '../components/DataTable';
 
 const Dashboard: React.FC = () => {
   const { data: federalMinistryDataInformation } = useSuspenseQuery(
     federalMinistryDataInformationQueryOptions,
   );
+
+  const columns = [
+    {
+      accessorKey: 'department',
+      header: 'Department',
+    },
+    {
+      accessorKey: 'description',
+      header: 'Description',
+    },
+    {
+      accessorKey: 'datasets',
+      header: 'Datasets',
+    },
+  ];
+
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen">
-      <h1 className="text-4xl font-bold mb-4">Department Data</h1>
-      {federalMinistryDataInformation.map((data) => (
-        <div key={data.department}>{data.department}</div>
-      ))}
+    <div className="flex flex-col justify-center items-center w-full h-full">
+      <DataTable
+        data={federalMinistryDataInformation || []}
+        columns={columns}
+      />
     </div>
   );
 };
